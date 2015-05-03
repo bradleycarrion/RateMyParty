@@ -11,24 +11,20 @@ import UIKit
 
 class SignUpViewController: UIViewController {
     @IBOutlet var freshmanImageView:UIImageView?
-    @IBOutlet var usernameInput:UITextField?
+    @IBOutlet var emailAddressInput:UITextField?
     @IBOutlet var passwordInput:UITextField?
     @IBOutlet var repeatPasswordInput:UITextField?
     @IBOutlet var graduationMonth:UITextField?
     @IBOutlet var graduationYear:UITextField?
     @IBOutlet var signupButton:UIButton?
     @IBOutlet var cancelButton:UIButton?
+    @IBOutlet var errorLabel: UILabel?
     
     let userDatabase = UserDatabase.sharedInstance
     
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
-        usernameInput?.placeholder = "new username"
-        passwordInput?.placeholder = "new password"
-        repeatPasswordInput?.placeholder = "repeat password"
-        graduationMonth?.placeholder = "month"
-        graduationYear?.placeholder = "year"
     }
     
     override func didReceiveMemoryWarning() {
@@ -37,22 +33,18 @@ class SignUpViewController: UIViewController {
     }
     
     @IBAction func signupButtonPressed(sender:UIButton) {
-        var email = usernameInput?.text
+        var email = emailAddressInput?.text
         var password1 = passwordInput?.text
         var password2 = repeatPasswordInput?.text
         var month = graduationMonth?.text.toInt()
         var year = graduationYear?.text.toInt()
-        /*
-        userDatabase.createNewUser(email!, password: password1!, graduationMonth: Int64(month!), graduationYear: Int64(year!)) {
-            dispatch_async(dispatch_get_main_queue()) {self.userDatabase.getAll(){
-                println("\n \nNew Scores")
-                for x in self.userDatabase.users {
-                    println("Email: \(x.email) Pwd: \(x.password)")
-                }
-                }}
-        }*/
         
+        //if (email?.rangeOfString(".edu"))
+        
+        userDatabase.createNewUser(email!, password: password1!, graduationMonth: month!, graduationYear:year!) {}
     }
+        
+    
     
     @IBAction func cancelButtonPressed(sender: AnyObject) {
         self.dismissViewControllerAnimated(true, completion: nil)

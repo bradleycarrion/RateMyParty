@@ -10,12 +10,16 @@ import Foundation
 import UIKit
 
 class UserItem: NSObject {
-    var email: String
+    var emailAddress: String
     var password: String
+    var graduationMonth: Int64
+    var graduationYear: Int64
     
-    init(email: String, password: String) {
-        self.email = email
+    init(email: String, password: String, gradMonth: Int64, gradYear: Int64) {
+        self.emailAddress = email
         self.password = password
+        self.graduationMonth = gradMonth
+        self.graduationYear = gradYear
         super.init()
     }
     

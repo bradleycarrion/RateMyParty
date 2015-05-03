@@ -35,15 +35,12 @@ class MapViewController: UIViewController {
     }
     
     @IBAction func addNewParty(sender: UIButton) {
-        let newPartyLoctation = MKAnnotationView()
+        let newPartyLoctation = MKPointAnnotation()
         newPartyLoctation.coordinate = mapView!.centerCoordinate
         newPartyLoctation.title = "New Party"
         newPartyLoctation.subtitle = "Safety: unsure"
-        newPartyLoctation.
         mapView!.addAnnotation(newPartyLoctation)
         
     }
-    
-    @IBAction func deletePartySelected(sender:
 
 }

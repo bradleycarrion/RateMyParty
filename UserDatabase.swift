@@ -11,8 +11,7 @@ import CloudKit
 
 class UserDatabase: NSObject {
     let container = CKContainer.defaultContainer()
-    var pbDataBase: CKDatabase?
-    
+    let pbDataBase:CKDatabase
     var users = [UserItem]()
     
     override init() {
@@ -31,49 +30,48 @@ class UserDatabase: NSObject {
         return Static.instance!
     }
     
-    
-    /*
-    func checkIfUserExists(name: String, password: String) -> bool {
+    func validateUserExists(email: String, password: String, closure: (success: Bool) -> ()) {
+        let emailAddress  = NSPredicate(format: "email = %@", email)
+        let passwordString  = NSPredicate(format: "password = %@", password)
         
+        var predicate = NSCompoundPredicate.andPredicateWithSubpredicates([emailAddress, passwordString])
+        
+        let query = CKQuery(recordType: "User", predicate: emailAddress)
+        pbDataBase.performQuery(query, inZoneWithID: nil, completionHandler: { (results, error) -> Void in
+            if (error != nil) {
+                println("Error")
+                closure(success: false)
+            }
+            else {
+                let emailStr = results[0].objectForKey("email") as! String
+                let passwordStr = results[0].objectForKey("password") as! String
+                println("Email \(emailStr)  Password \(passwordStr)")
+                println("EXISTS")
+                closure(success: true)
+            }
+        })
     }
-    */
     
-    /*
-    func createNewUser(email: String, password: String, graduationMonth: Int64, graduationYear: Int64, closure: () -> ()) {
+    
+    func createNewUser(email: String, password: String, graduationMonth: Int, graduationYear: Int, closure: () -> ()) {
         let newUser = CKRecord(recordType: "User")
-        newUser.setObject(email, forKey: "Email")
-        newUser.setObject(password, forKey: "Password")
-        newUser.setObject(graduationYear, forKey: "GradYear")
-        newUser.setObject(graduationMonth, forKey: "GradMonth")
-        pbDataBase?.saveRecord(newUser, completionHandler: { (newUser, error) in
-            if let err = error {
+        newUser.setObject(email, forKey: "email")
+        newUser.setObject(password, forKey: "password")
+        newUser.setObject(graduationMonth, forKey: "gradMonth")
+        newUser.setObject(graduationYear, forKey: "gradYear")
+
+
+        pbDataBase.saveRecord(newUser, completionHandler: { (newUser, error) in
+            if error != nil {
                 println("Error")
             }
             else {
                 closure()
             }
         })
-    }*/
-    
-    func getAll(closure: () -> ()) {
-        let predicate = NSPredicate(value: true)
-        let query = CKQuery(recordType: "Users", predicate: predicate)
-        pbDataBase?.performQuery(query, inZoneWithID: nil, completionHandler: { (results, error) -> Void in
-            if (error != nil) {
-                dispatch_async(dispatch_get_main_queue()) { println("Load names fail")}
-            }
-            else {
-                self.users.removeAll(keepCapacity: false)
-                for result in results {
-                    let email   : String = result.objectForKey("Email") as! String
-                    let password  : String    = result.objectForKey("Password")   as! String
-                    let newUser = UserItem(email: email, password: password)
-                    self.users.append(newUser)
-                }
-                closure()
-            }
-        })
     }
+    
+    
     
     
 }

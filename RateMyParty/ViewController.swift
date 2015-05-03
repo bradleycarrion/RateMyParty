@@ -9,8 +9,10 @@
 import UIKit
 
 class ViewController: UIViewController {
+    let userDatabase = UserDatabase.sharedInstance
+    
     @IBOutlet var backgroundImageView:UIImageView?
-    @IBOutlet var userNameInput:UITextField?
+    @IBOutlet var emailAddressInput:UITextField?
     @IBOutlet var passwordInput:UITextField?
     @IBOutlet var loginButton:UIButton?
     @IBOutlet var signupButton:UIButton?
@@ -18,8 +20,6 @@ class ViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
-        userNameInput?.placeholder = "username"
-        passwordInput?.placeholder = "password"
         
     }
 
@@ -29,11 +29,27 @@ class ViewController: UIViewController {
     }
     
     @IBAction func loginButtonPressed(sender: UIButton) {
+        if (emailAddressInput!.text == "" && passwordInput?.text == "") {
+            return
+        } else {
+            userDatabase.validateUserExists(emailAddressInput!.text, password: passwordInput!.text, closure: {(success: Bool) -> () in
+                if (success) {
+                    println("It worked")
+                    self.performSegueWithIdentifier("loginSegue", sender: self)
+                    
+                }
+                else {
+                    println("User not found")
+                }
+            })
+            
+            
+        }
     }
     
     @IBAction func signUpBottonPressed(sender:UIButton) {
+        
     }
-    
     
 
 

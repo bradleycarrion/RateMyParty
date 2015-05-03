@@ -9,7 +9,6 @@
 /* Begin PBXBuildFile section */
 		23D71D971AF569E400B58BB9 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 23D71D961AF569E400B58BB9 /* AppDelegate.swift */; };
 		23D71D991AF569E400B58BB9 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 23D71D981AF569E400B58BB9 /* ViewController.swift */; };
-		23D71D9C1AF569E400B58BB9 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 23D71D9A1AF569E400B58BB9 /* Main.storyboard */; };
 		23D71DA11AF569E500B58BB9 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 23D71D9F1AF569E500B58BB9 /* LaunchScreen.xib */; };
 		23D71DAD1AF569E500B58BB9 /* RateMyPartyTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 23D71DAC1AF569E500B58BB9 /* RateMyPartyTests.swift */; };
 		23D71DB71AF56E1800B58BB9 /* party.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 23D71DB61AF56E1800B58BB9 /* party.jpg */; };
@@ -19,6 +18,7 @@
 		23D71DC21AF5E98A00B58BB9 /* UserDatabase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 23D71DC11AF5E98A00B58BB9 /* UserDatabase.swift */; };
 		23D71DC51AF5EF9400B58BB9 /* CloudKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 23D71DC41AF5EF9400B58BB9 /* CloudKit.framework */; };
 		23D71DC71AF61E1E00B58BB9 /* UserItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 23D71DC61AF61E1E00B58BB9 /* UserItem.swift */; };
+		23D71DCB1AF6E3E000B58BB9 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 23D71DCA1AF6E3E000B58BB9 /* Main.storyboard */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -36,7 +36,6 @@
 		23D71D951AF569E400B58BB9 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		23D71D961AF569E400B58BB9 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		23D71D981AF569E400B58BB9 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
-		23D71D9B1AF569E400B58BB9 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		23D71DA01AF569E500B58BB9 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/LaunchScreen.xib; sourceTree = "<group>"; };
 		23D71DA61AF569E500B58BB9 /* RateMyPartyTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = RateMyPartyTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		23D71DAB1AF569E500B58BB9 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -49,6 +48,7 @@
 		23D71DC31AF5EF8F00B58BB9 /* RateMyParty.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.xml; path = RateMyParty.entitlements; sourceTree = "<group>"; };
 		23D71DC41AF5EF9400B58BB9 /* CloudKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CloudKit.framework; path = System/Library/Frameworks/CloudKit.framework; sourceTree = SDKROOT; };
 		23D71DC61AF61E1E00B58BB9 /* UserItem.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UserItem.swift; sourceTree = "<group>"; };
+		23D71DCA1AF6E3E000B58BB9 /* Main.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Main.storyboard; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -100,8 +100,8 @@
 				23D71DB91AF582A400B58BB9 /* SignUpViewController.swift */,
 				23D71DBF1AF5DB8300B58BB9 /* MapViewController.swift */,
 				23D71D981AF569E400B58BB9 /* ViewController.swift */,
-				23D71D9A1AF569E400B58BB9 /* Main.storyboard */,
 				23D71D9F1AF569E500B58BB9 /* LaunchScreen.xib */,
+				23D71DCA1AF6E3E000B58BB9 /* Main.storyboard */,
 				23D71D941AF569E400B58BB9 /* Supporting Files */,
 			);
 			path = RateMyParty;
@@ -228,9 +228,9 @@
 			buildActionMask = 2147483647;
 			files = (
 				23D71DB71AF56E1800B58BB9 /* party.jpg in Resources */,
-				23D71D9C1AF569E400B58BB9 /* Main.storyboard in Resources */,
 				23D71DA11AF569E500B58BB9 /* LaunchScreen.xib in Resources */,
 				23D71DBE1AF5952300B58BB9 /* freshman.jpg in Resources */,
+				23D71DCB1AF6E3E000B58BB9 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -276,14 +276,6 @@
 /* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
-		23D71D9A1AF569E400B58BB9 /* Main.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				23D71D9B1AF569E400B58BB9 /* Base */,
-			);
-			name = Main.storyboard;
-			sourceTree = "<group>";
-		};
 		23D71D9F1AF569E500B58BB9 /* LaunchScreen.xib */ = {
 			isa = PBXVariantGroup;
 			children = (
