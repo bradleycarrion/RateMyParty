@@ -12,7 +12,7 @@ import MapKit
 import CoreLocation
 
 
-class MapViewController: UIViewController, CLLocationManagerDelegate {
+class MapViewController: UIViewController, CLLocationManagerDelegate, AddHouseDelegate{
     @IBOutlet var mapView:MKMapView?
     let manager = CLLocationManager()
 
@@ -42,7 +42,21 @@ class MapViewController: UIViewController, CLLocationManagerDelegate {
         newPartyLoctation.title = "New Party"
         newPartyLoctation.subtitle = "Safety: unsure"
         mapView!.addAnnotation(newPartyLoctation)
-        
+    }
+    
+    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
+        println("SEGUE")
+        let addVc = segue.destinationViewController as! AddHouseViewController
+        addVc.delegate = self
+    }
+    
+    func addPin(adress: String, nickName: String) {
+        println("pin at \(adress)")
+        let pin = MKPointAnnotation()
+        pin.coordinate = manager.location.coordinate
+        pin.title = nickName
+        pin.subtitle = adress
+        mapView?.addAnnotation(pin)
     }
 
 }

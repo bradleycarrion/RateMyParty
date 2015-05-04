@@ -19,6 +19,8 @@
 		23D71DC51AF5EF9400B58BB9 /* CloudKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 23D71DC41AF5EF9400B58BB9 /* CloudKit.framework */; };
 		23D71DC71AF61E1E00B58BB9 /* UserItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 23D71DC61AF61E1E00B58BB9 /* UserItem.swift */; };
 		23D71DCB1AF6E3E000B58BB9 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 23D71DCA1AF6E3E000B58BB9 /* Main.storyboard */; };
+		BBE939E61AF7585A00050D6A /* AddHouseDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = BBE939E51AF7585A00050D6A /* AddHouseDelegate.swift */; };
+		BBE939E81AF7594300050D6A /* AddHouseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BBE939E71AF7594300050D6A /* AddHouseViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -49,6 +51,8 @@
 		23D71DC41AF5EF9400B58BB9 /* CloudKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CloudKit.framework; path = System/Library/Frameworks/CloudKit.framework; sourceTree = SDKROOT; };
 		23D71DC61AF61E1E00B58BB9 /* UserItem.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UserItem.swift; sourceTree = "<group>"; };
 		23D71DCA1AF6E3E000B58BB9 /* Main.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Main.storyboard; sourceTree = "<group>"; };
+		BBE939E51AF7585A00050D6A /* AddHouseDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AddHouseDelegate.swift; sourceTree = "<group>"; };
+		BBE939E71AF7594300050D6A /* AddHouseViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AddHouseViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -102,6 +106,8 @@
 				23D71D981AF569E400B58BB9 /* ViewController.swift */,
 				23D71D9F1AF569E500B58BB9 /* LaunchScreen.xib */,
 				23D71DCA1AF6E3E000B58BB9 /* Main.storyboard */,
+				BBE939E51AF7585A00050D6A /* AddHouseDelegate.swift */,
+				BBE939E71AF7594300050D6A /* AddHouseViewController.swift */,
 				23D71D941AF569E400B58BB9 /* Supporting Files */,
 			);
 			path = RateMyParty;
@@ -248,8 +254,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				BBE939E61AF7585A00050D6A /* AddHouseDelegate.swift in Sources */,
 				23D71DC21AF5E98A00B58BB9 /* UserDatabase.swift in Sources */,
 				23D71DBA1AF582A400B58BB9 /* SignUpViewController.swift in Sources */,
+				BBE939E81AF7594300050D6A /* AddHouseViewController.swift in Sources */,
 				23D71D991AF569E400B58BB9 /* ViewController.swift in Sources */,
 				23D71D971AF569E400B58BB9 /* AppDelegate.swift in Sources */,
 				23D71DC01AF5DB8300B58BB9 /* MapViewController.swift in Sources */,
@@ -449,6 +457,7 @@
 				23D71DB21AF569E500B58BB9 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		23D71DB31AF569E500B58BB9 /* Build configuration list for PBXNativeTarget "RateMyPartyTests" */ = {
 			isa = XCConfigurationList;
@@ -457,6 +466,7 @@
 				23D71DB51AF569E500B58BB9 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};

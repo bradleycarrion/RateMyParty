@@ -44,11 +44,14 @@ class UserDatabase: NSObject {
                 
             }
             else {
-                let emailStr = results[0].objectForKey("email") as! String
-                let passwordStr = results[0].objectForKey("password") as! String
-                println("Email \(emailStr)  Password \(passwordStr)")
-                println("EXISTS")
-                closure(success: true)
+                if (results.count > 0) {
+                    let emailStr = results[0].objectForKey("email") as! String
+                    let passwordStr = results[0].objectForKey("password") as! String
+                    println("Email \(emailStr)  Password \(passwordStr)")
+                    println("EXISTS")
+                
+                    closure(success: true)
+                }
             }
         })
     }

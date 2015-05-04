@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="7702" systemVersion="14C1514" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" initialViewController="vXZ-lx-hvc">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="7531" systemVersion="14A314h" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" initialViewController="vXZ-lx-hvc">
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="7701"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="7520"/>
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
     </dependencies>
     <scenes>
@@ -135,6 +135,7 @@
                                 </state>
                                 <connections>
                                     <action selector="addNewParty:" destination="Ojw-KU-9WJ" eventType="touchUpInside" id="0CV-8s-HRZ"/>
+                                    <segue destination="sX8-KJ-CgY" kind="custom" identifier="AddHouseSegue" id="3IR-st-pij"/>
                                 </connections>
                             </button>
                         </subviews>
@@ -162,6 +163,63 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="paE-Uv-rHd" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="600.5" y="413.5"/>
+        </scene>
+        <!--Add House View Controller-->
+        <scene sceneID="g07-RZ-FKR">
+            <objects>
+                <viewController id="sX8-KJ-CgY" customClass="AddHouseViewController" customModule="RateMyParty" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="jh1-Oi-WUQ"/>
+                        <viewControllerLayoutGuide type="bottom" id="j4C-MR-xsi"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="kCn-dj-IHj">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Add a New House" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="3rN-uo-DsU">
+                                <rect key="frame" x="81" y="28" width="159" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="6P1-UH-ZFu">
+                                <rect key="frame" x="16" y="24" width="35" height="30"/>
+                                <state key="normal" title="Back">
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                            </button>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Adress" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="4VE-Vd-Hss">
+                                <rect key="frame" x="16" y="76" width="241" height="30"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="House Nickname" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="0Qd-gB-PsV">
+                                <rect key="frame" x="16" y="122" width="241" height="30"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="iOb-m5-7cb">
+                                <rect key="frame" x="268" y="24" width="52" height="30"/>
+                                <state key="normal" title="Add">
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="addPressed:" destination="sX8-KJ-CgY" eventType="touchUpInside" id="SPT-WF-Jng"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" red="0.40000000600000002" green="0.80000001190000003" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                    </view>
+                    <navigationItem key="navigationItem" id="zAm-kk-8dl"/>
+                    <connections>
+                        <outlet property="addButton" destination="iOb-m5-7cb" id="Cl8-e8-kqA"/>
+                        <outlet property="adressIn" destination="4VE-Vd-Hss" id="b9k-8A-3th"/>
+                        <outlet property="nickNameIn" destination="0Qd-gB-PsV" id="82S-n6-b57"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="MwN-4M-lyd" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1104" y="383"/>
         </scene>
         <!--Sign Up View Controller-->
         <scene sceneID="edp-sn-UPr">
