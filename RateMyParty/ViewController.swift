@@ -63,9 +63,7 @@ class ViewController: UIViewController, UITextFieldDelegate {
         }
     }
     
-    @IBAction func signUpBottonPressed(sender:UIButton) {
-        
-    }
+    @IBAction func signUpBottonPressed(sender:UIButton) {}
     
     
     /**
