@@ -27,7 +27,6 @@ class ViewController: UIViewController, UITextFieldDelegate {
         passwordInput?.delegate = self
         emailAddressInput?.delegate = self
         if CLLocationManager.authorizationStatus() == .NotDetermined {
-            
             manager.requestWhenInUseAuthorization()
         }
         
@@ -53,7 +52,6 @@ class ViewController: UIViewController, UITextFieldDelegate {
                         self.performSegueWithIdentifier("loginSegue", sender: self)
                         self.spin?.stopAnimating()
                     }
-                    
                 }
                 else {
                     println("User not found")
