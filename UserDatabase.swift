@@ -40,7 +40,8 @@ class UserDatabase: NSObject {
         pbDataBase.performQuery(query, inZoneWithID: nil, completionHandler: { (results, error) -> Void in
             if (error != nil) {
                 println("Error")
-                closure(success: false)
+                dispatch_async(dispatch_get_main_queue()){ closure(success: false)}
+                
             }
             else {
                 let emailStr = results[0].objectForKey("email") as! String

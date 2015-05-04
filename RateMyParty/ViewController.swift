@@ -7,8 +7,10 @@
 //
 
 import UIKit
+import MapKit
+import CoreLocation
 
-class ViewController: UIViewController {
+class ViewController: UIViewController, UITextFieldDelegate {
     let userDatabase = UserDatabase.sharedInstance
     
     @IBOutlet var backgroundImageView:UIImageView?
@@ -16,10 +18,19 @@ class ViewController: UIViewController {
     @IBOutlet var passwordInput:UITextField?
     @IBOutlet var loginButton:UIButton?
     @IBOutlet var signupButton:UIButton?
+    @IBOutlet var spin: UIActivityIndicatorView?
+    var manager = CLLocationManager()
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        // Do any additional setup after loading the view, typically from a nib.
+        passwordInput!.secureTextEntry = true
+        passwordInput?.delegate = self
+        emailAddressInput?.delegate = self
+        if CLLocationManager.authorizationStatus() == .NotDetermined {
+            
+            manager.requestWhenInUseAuthorization()
+        }
+        
         
     }
 
@@ -32,15 +43,22 @@ class ViewController: UIViewController {
         if (emailAddressInput!.text == "" && passwordInput?.text == "") {
             return
         } else {
+            
+            spin?.startAnimating()
             userDatabase.validateUserExists(emailAddressInput!.text, password: passwordInput!.text, closure: {(success: Bool) -> () in
+            
                 if (success) {
                     println("It worked")
-                    self.performSegueWithIdentifier("loginSegue", sender: self)
+                    dispatch_async(dispatch_get_main_queue()) {
+                        self.performSegueWithIdentifier("loginSegue", sender: self)
+                        self.spin?.stopAnimating()
+                    }
                     
                 }
                 else {
                     println("User not found")
                 }
+                
             })
             
             
@@ -49,6 +67,14 @@ class ViewController: UIViewController {
     
     @IBAction func signUpBottonPressed(sender:UIButton) {
         
+    }
+    
+    
+    /**
+      *  TextField Delegate functions
+      */
+    func textFieldShouldReturn(textField: UITextField) -> Bool {
+        return textField.resignFirstResponder()
     }
     
 

@@ -1,0 +1,116 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Bucket
+   type = "1"
+   version = "2.0">
+   <Breakpoints>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "RateMyParty/MapViewController.swift"
+            timestampString = "452393549.746799"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "15"
+            endingLineNumber = "15"
+            landmarkName = "MapViewController"
+            landmarkType = "3">
+            <Locations>
+               <Location
+                  shouldBeEnabled = "No"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "RateMyParty.MapViewController.mapView.getter : Swift.Optional&lt;ObjectiveC.MKMapView&gt;"
+                  moduleName = "RateMyParty"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/heinzelman/Desktop/Programming/RateMyParty/RateMyParty/MapViewController.swift"
+                  timestampString = "452392083.409941"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "0"
+                  endingLineNumber = "0"
+                  offsetFromSymbolStart = "24">
+               </Location>
+               <Location
+                  shouldBeEnabled = "No"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "RateMyParty.MapViewController.mapView.setter : Swift.Optional&lt;ObjectiveC.MKMapView&gt;"
+                  moduleName = "RateMyParty"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/heinzelman/Desktop/Programming/RateMyParty/RateMyParty/MapViewController.swift"
+                  timestampString = "452392083.411493"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "0"
+                  endingLineNumber = "0"
+                  offsetFromSymbolStart = "20">
+               </Location>
+               <Location
+                  shouldBeEnabled = "No"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "RateMyParty.MapViewController.mapView.materializeForSet : Swift.Optional&lt;ObjectiveC.MKMapView&gt;"
+                  moduleName = "RateMyParty"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/heinzelman/Desktop/Programming/RateMyParty/RateMyParty/MapViewController.swift"
+                  timestampString = "452392083.411871"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "0"
+                  endingLineNumber = "0"
+                  offsetFromSymbolStart = "20">
+               </Location>
+               <Location
+                  shouldBeEnabled = "No"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "RateMyParty.MapViewController.init (RateMyParty.MapViewController.Type)(nibName : Swift.Optional&lt;Swift.String&gt;, bundle : Swift.Optional&lt;ObjectiveC.NSBundle&gt;) -&gt; RateMyParty.MapViewController"
+                  moduleName = "RateMyParty"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/heinzelman/Desktop/Programming/RateMyParty/RateMyParty/MapViewController.swift"
+                  timestampString = "452392083.412248"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "14"
+                  endingLineNumber = "14"
+                  offsetFromSymbolStart = "56">
+               </Location>
+               <Location
+                  shouldBeEnabled = "No"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "RateMyParty.MapViewController.init (RateMyParty.MapViewController.Type)(coder : ObjectiveC.NSCoder) -&gt; RateMyParty.MapViewController"
+                  moduleName = "RateMyParty"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/heinzelman/Desktop/Programming/RateMyParty/RateMyParty/MapViewController.swift"
+                  timestampString = "452392083.412609"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "14"
+                  endingLineNumber = "14"
+                  offsetFromSymbolStart = "36">
+               </Location>
+            </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "RateMyParty/ViewController.swift"
+            timestampString = "452393549.746799"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "27"
+            endingLineNumber = "27"
+            landmarkName = "viewDidLoad()"
+            landmarkType = "5">
+         </BreakpointContent>
+      </BreakpointProxy>
+   </Breakpoints>
+</Bucket>

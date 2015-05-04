@@ -24,6 +24,8 @@ class SignUpViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        passwordInput?.secureTextEntry = true
+        repeatPasswordInput?.secureTextEntry = true
         // Do any additional setup after loading the view, typically from a nib.
     }
     

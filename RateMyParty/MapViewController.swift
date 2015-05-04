@@ -9,19 +9,22 @@
 import Foundation
 import UIKit
 import MapKit
+import CoreLocation
 
-class MapViewController: UIViewController {
+
+class MapViewController: UIViewController, CLLocationManagerDelegate {
     @IBOutlet var mapView:MKMapView?
-    let location:CLLocationCoordinate2D = CLLocationCoordinate2D(latitude: 47.6772330,
-        longitude: -117.4028770)
+    let manager = CLLocationManager()
+
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        // Do any additional setup after loading the view, typically from a nib.
-        // 2
-        let span = MKCoordinateSpanMake(0.04, 0.04)
-        let region = MKCoordinateRegion(center: location, span: span)
-        mapView!.setRegion(region, animated: true)
+        
+        var span =   MKCoordinateSpan(latitudeDelta:  0.04, longitudeDelta: 0.04)
+        var reg = CLLocationCoordinate2D(latitude: 47.6772330,longitude: -117.4028770)
+        var region = MKCoordinateRegion(center:  manager.location.coordinate, span: span)
+        mapView!.setRegion(region, animated: false)
+
         
     }
     
