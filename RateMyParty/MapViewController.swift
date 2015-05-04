@@ -21,7 +21,6 @@ class MapViewController: UIViewController, CLLocationManagerDelegate {
         super.viewDidLoad()
         
         var span =   MKCoordinateSpan(latitudeDelta:  0.04, longitudeDelta: 0.04)
-        var reg = CLLocationCoordinate2D(latitude: 47.6772330,longitude: -117.4028770)
         var region = MKCoordinateRegion(center:  manager.location.coordinate, span: span)
         mapView!.setRegion(region, animated: false)
 
