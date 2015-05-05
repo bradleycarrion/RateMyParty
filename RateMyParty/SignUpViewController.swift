@@ -20,7 +20,7 @@ class SignUpViewController: UIViewController {
     @IBOutlet var cancelButton:UIButton?
     @IBOutlet var errorLabel: UILabel?
     
-    let userDatabase = UserDatabase.sharedInstance
+    let userDatabase = UserDatabase()
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -43,7 +43,7 @@ class SignUpViewController: UIViewController {
         
         //if (email?.rangeOfString(".edu"))
         
-        userDatabase.createNewUser(email!, password: password1!, graduationMonth: month!, graduationYear:year!) {}
+        userDatabase.createNewUser(email!, password: password1!, graduationMonth: month!, graduationYear:year!) {/*some closure*/}
     }
         
     

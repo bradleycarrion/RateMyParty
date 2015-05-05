@@ -11,7 +11,7 @@ import MapKit
 import CoreLocation
 
 class ViewController: UIViewController, UITextFieldDelegate {
-    let userDatabase = UserDatabase.sharedInstance
+    let userDatabase = UserDatabase()
     
     @IBOutlet var backgroundImageView:UIImageView?
     @IBOutlet var emailAddressInput:UITextField?

@@ -15,6 +15,7 @@ import CoreLocation
 class MapViewController: UIViewController, CLLocationManagerDelegate, AddHouseDelegate{
     @IBOutlet var mapView:MKMapView?
     let manager = CLLocationManager()
+    var pins: [HouseItem]? = nil
 
     
     override func viewDidLoad() {
@@ -23,7 +24,9 @@ class MapViewController: UIViewController, CLLocationManagerDelegate, AddHouseDe
         var span =   MKCoordinateSpan(latitudeDelta:  0.04, longitudeDelta: 0.04)
         var region = MKCoordinateRegion(center:  manager.location.coordinate, span: span)
         mapView!.setRegion(region, animated: false)
-
+        dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0), {
+            self.getLocalPins()
+        })
         
     }
     
@@ -36,13 +39,7 @@ class MapViewController: UIViewController, CLLocationManagerDelegate, AddHouseDe
         self.dismissViewControllerAnimated(true, completion: nil)
     }
     
-    @IBAction func addNewParty(sender: UIButton) {
-        let newPartyLoctation = MKPointAnnotation()
-        newPartyLoctation.coordinate = mapView!.centerCoordinate
-        newPartyLoctation.title = "New Party"
-        newPartyLoctation.subtitle = "Safety: unsure"
-        mapView!.addAnnotation(newPartyLoctation)
-    }
+    
     
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
         println("SEGUE")
@@ -57,6 +54,27 @@ class MapViewController: UIViewController, CLLocationManagerDelegate, AddHouseDe
         pin.title = nickName
         pin.subtitle = adress
         mapView?.addAnnotation(pin)
+        let pinDb = PinDatabase()
+        pinDb.addPinToDatabase(manager.location, address: adress, nickname: nickName) {}
+    }
+    
+    func getLocalPins() {
+        let pinDb = PinDatabase()
+        pinDb.fetchPins(manager.location, radiusInMeters: 3000) { (results) in
+            if (results != nil) {
+                for r in results! {
+                    let adr = r.objectForKey("address") as! String
+                    let nickname = r.objectForKey("nickname") as! String
+                    let loc = r.objectForKey("location") as! CLLocation
+                    let pin = MKPointAnnotation()
+                    pin.coordinate = loc.coordinate
+                    pin.title = nickname
+                    pin.subtitle = adr
+                    self.mapView?.addAnnotation(pin)
+                }
+                
+            }
+        }
     }
 
 }

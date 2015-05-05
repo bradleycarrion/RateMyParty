@@ -134,7 +134,6 @@
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                                 <connections>
-                                    <action selector="addNewParty:" destination="Ojw-KU-9WJ" eventType="touchUpInside" id="0CV-8s-HRZ"/>
                                     <segue destination="sX8-KJ-CgY" kind="custom" identifier="AddHouseSegue" id="3IR-st-pij"/>
                                 </connections>
                             </button>
