@@ -50,13 +50,16 @@ class TopCloud: NSObject {
                 if (results.count > 0) {
                     dispatch_async(dispatch_get_main_queue()){ closure(success: true)}
                 }
+                else {
+                    closure(success: false)
+                }
             }
         })
     }
     
     /**
-        class method to push data to Cloud
-        Takes a record and a closure
+      * Class method to push data to Cloud
+      * Takes a record and a closure
       */
     class func pushToCloud(record: CKRecord, closure: () -> ()) {
         StaticMembers.pbDataBase.saveRecord(record, completionHandler: { (record, error) in
@@ -69,6 +72,10 @@ class TopCloud: NSObject {
         })
     }
     
+    /**
+      * gets all the results for a given query
+      * returns the results as a parameter in a closure
+      */
     class func getQueryResults(query: CKQuery, closure: (qResults: [AnyObject]?) -> ()) {
         StaticMembers.pbDataBase.performQuery(query, inZoneWithID: nil, completionHandler: { (results, error) -> Void in
             if (error != nil) {
@@ -78,7 +85,6 @@ class TopCloud: NSObject {
             }
             else {
                 if (results.count > 0) {
-                    println("Results > 0")
                     dispatch_async(dispatch_get_main_queue()){ closure(qResults: results)}
                 }
             }

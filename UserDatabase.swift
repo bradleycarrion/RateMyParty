@@ -13,6 +13,9 @@ class UserDatabase: NSObject {
     
     override init() {}
     
+    /**
+      * checks to see if password/email combo is in the database
+      */
     func validateUserExists(email: String, password: String, closure: (success: Bool) -> ()) {
         let emailAddress  = NSPredicate(format: "email = %@", email)
         let passwordString  = NSPredicate(format: "password = %@", password)
@@ -22,7 +25,18 @@ class UserDatabase: NSObject {
         
     }
     
+    /**
+      *  querys the database to check and see if the email is already in use
+      *  returns success as parameter of a closure
+      */
+    func checkExistingEmail(email: String, closure: (success:Bool) -> ()) {
+        let emailAddress  = NSPredicate(format: "email = %@", email)
+        TopCloud.query(emailAddress, recordType: "User", closure: closure)
+    }
     
+    /**
+      * adds new user to the data base
+      */
     func createNewUser(email: String, password: String, graduationMonth: Int, graduationYear: Int, closure: () -> ()) {
         let newUser = CKRecord(recordType: "User")
         newUser.setObject(email, forKey: "email")
@@ -33,7 +47,7 @@ class UserDatabase: NSObject {
 
     }
     
-    
+        
     
     
 }

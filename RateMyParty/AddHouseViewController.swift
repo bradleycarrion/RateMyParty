@@ -13,7 +13,7 @@ class AddHouseViewController: UIViewController, UITextFieldDelegate {
     @IBOutlet var adressIn:   UITextField?
     @IBOutlet var nickNameIn: UITextField?
     @IBOutlet var addButton:  UIButton?
-    var delegate:     AddHouseDelegate?
+    var delegate:             AddHouseDelegate?
     
     override func viewDidLoad() {
         super.viewDidLoad()
