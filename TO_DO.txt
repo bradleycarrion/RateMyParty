@@ -1,0 +1,17 @@
+TO DO::Complete by May 17,2015
+
+BRADLEY:
+-Implement the image on the Annotation
+-work on table
+      -House name
+      -address
+      -streetview image <Basic image till Bert is done>
+      -if possible-> connect to maps
+-implement directions button
+-custom tab bar images
+
+BERT:
+-Implement Street view <Get Image>
+	   -install Google SDK
+-Add reviews to cloud if street view is completed
+-Formalize coding documentation and convention
