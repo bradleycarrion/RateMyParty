@@ -12,19 +12,30 @@ import MapKit
 import CoreLocation
 
 
-class MapViewController: UIViewController, CLLocationManagerDelegate, AddHouseDelegate, MKMapViewDelegate{
+class MapViewController: UIViewController, CLLocationManagerDelegate, AddHouseDelegate, MKMapViewDelegate {
     @IBOutlet var mapView:MKMapView?
     let manager = CLLocationManager()
     var pins = [HouseItem]()
+    
+    // creates a white background to better see the time and power
+    let timePowerBar = UIView()
   
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        mapView?.delegate = self
+        
+        timePowerBar.frame = CGRectMake(0, 0, self.view.frame.width, 20)
+        timePowerBar.backgroundColor = UIColor.whiteColor()
+        self.view.addSubview(timePowerBar)
+        
+        
+        UITabBar.appearance().barTintColor = UIColor.blackColor()
+        self.view.backgroundColor = UIColor.blackColor()
         var span =   MKCoordinateSpan(latitudeDelta:  0.04, longitudeDelta: 0.04)
         var region = MKCoordinateRegion(center:  manager.location.coordinate, span: span)
         mapView!.setRegion(region, animated: false)
-        mapView!.delegate = self
         dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0), {
             self.getLocalPins()
         })
@@ -93,7 +104,7 @@ class MapViewController: UIViewController, CLLocationManagerDelegate, AddHouseDe
       */
     private func getLocalPins() {
         let pinDb = PinDatabase()
-        pinDb.fetchPins(manager.location, radiusInMeters: 10000000) { (results) in
+        pinDb.fetchPins(manager.location, radiusInMeters: 100000000) { (results) in
             if let finds = results {
                 for r in finds {
                     let adr = r.objectForKey("address") as! String
@@ -112,7 +123,6 @@ class MapViewController: UIViewController, CLLocationManagerDelegate, AddHouseDe
             }
         }
     }
-    
     
     // When user taps on the disclosure button you can perform a segue to navigate to another view controller
     func mapView(mapView: MKMapView!, annotationView view: MKAnnotationView!, calloutAccessoryControlTapped control: UIControl!) {

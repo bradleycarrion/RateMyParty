@@ -19,7 +19,6 @@
 		23D71DC51AF5EF9400B58BB9 /* CloudKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 23D71DC41AF5EF9400B58BB9 /* CloudKit.framework */; };
 		23D71DC71AF61E1E00B58BB9 /* UserItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 23D71DC61AF61E1E00B58BB9 /* UserItem.swift */; };
 		23ED966B1B0139B000E2013C /* DiscussionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 23ED966A1B0139B000E2013C /* DiscussionViewController.swift */; };
-		BB31BAA61B0028CD0010EA97 /* HouseTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB31BAA51B0028CD0010EA97 /* HouseTableViewController.swift */; };
 		BB31BAA81B005F4C0010EA97 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = BB31BAA71B005F4C0010EA97 /* Main.storyboard */; };
 		BBE939E61AF7585A00050D6A /* AddHouseDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = BBE939E51AF7585A00050D6A /* AddHouseDelegate.swift */; };
 		BBE939E81AF7594300050D6A /* AddHouseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BBE939E71AF7594300050D6A /* AddHouseViewController.swift */; };
@@ -27,6 +26,7 @@
 		BBE939EC1AF8754300050D6A /* PinDatabase.swift in Sources */ = {isa = PBXBuildFile; fileRef = BBE939EB1AF8754300050D6A /* PinDatabase.swift */; };
 		BBE939EE1AF89F9F00050D6A /* HouseItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = BBE939ED1AF89F9F00050D6A /* HouseItem.swift */; };
 		BBE9D6A81B01E41600A97AA2 /* GeoLocation.swift in Sources */ = {isa = PBXBuildFile; fileRef = BBE9D6A71B01E41600A97AA2 /* GeoLocation.swift */; };
+		BBE9D6AC1B044CD900A97AA2 /* MainHouseListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BBE9D6AB1B044CD900A97AA2 /* MainHouseListView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -57,7 +57,6 @@
 		23D71DC41AF5EF9400B58BB9 /* CloudKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CloudKit.framework; path = System/Library/Frameworks/CloudKit.framework; sourceTree = SDKROOT; };
 		23D71DC61AF61E1E00B58BB9 /* UserItem.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UserItem.swift; sourceTree = "<group>"; };
 		23ED966A1B0139B000E2013C /* DiscussionViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DiscussionViewController.swift; sourceTree = "<group>"; };
-		BB31BAA51B0028CD0010EA97 /* HouseTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HouseTableViewController.swift; sourceTree = "<group>"; };
 		BB31BAA71B005F4C0010EA97 /* Main.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Main.storyboard; sourceTree = "<group>"; };
 		BBE939E51AF7585A00050D6A /* AddHouseDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AddHouseDelegate.swift; sourceTree = "<group>"; };
 		BBE939E71AF7594300050D6A /* AddHouseViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AddHouseViewController.swift; sourceTree = "<group>"; };
@@ -65,6 +64,7 @@
 		BBE939EB1AF8754300050D6A /* PinDatabase.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PinDatabase.swift; sourceTree = "<group>"; };
 		BBE939ED1AF89F9F00050D6A /* HouseItem.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = HouseItem.swift; path = ../HouseItem.swift; sourceTree = "<group>"; };
 		BBE9D6A71B01E41600A97AA2 /* GeoLocation.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GeoLocation.swift; sourceTree = "<group>"; };
+		BBE9D6AB1B044CD900A97AA2 /* MainHouseListView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MainHouseListView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -108,6 +108,7 @@
 		23D71D931AF569E400B58BB9 /* RateMyParty */ = {
 			isa = PBXGroup;
 			children = (
+				BBE9D6AB1B044CD900A97AA2 /* MainHouseListView.swift */,
 				23D71DC31AF5EF8F00B58BB9 /* RateMyParty.entitlements */,
 				23D71DB81AF56E2100B58BB9 /* images */,
 				23D71D961AF569E400B58BB9 /* AppDelegate.swift */,
@@ -122,7 +123,6 @@
 				23D71DBF1AF5DB8300B58BB9 /* MapViewController.swift */,
 				23D71D981AF569E400B58BB9 /* ViewController.swift */,
 				23D71D9F1AF569E500B58BB9 /* LaunchScreen.xib */,
-				BB31BAA51B0028CD0010EA97 /* HouseTableViewController.swift */,
 				23ED966A1B0139B000E2013C /* DiscussionViewController.swift */,
 				BBE939E51AF7585A00050D6A /* AddHouseDelegate.swift */,
 				BBE939E71AF7594300050D6A /* AddHouseViewController.swift */,
@@ -272,7 +272,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				BB31BAA61B0028CD0010EA97 /* HouseTableViewController.swift in Sources */,
+				BBE9D6AC1B044CD900A97AA2 /* MainHouseListView.swift in Sources */,
 				BBE939EE1AF89F9F00050D6A /* HouseItem.swift in Sources */,
 				23ED966B1B0139B000E2013C /* DiscussionViewController.swift in Sources */,
 				BBE939EC1AF8754300050D6A /* PinDatabase.swift in Sources */,

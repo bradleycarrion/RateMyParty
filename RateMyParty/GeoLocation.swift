@@ -11,7 +11,7 @@ import CoreLocation
 
 class GeoLocation: NSObject {
     
-    class func addressToLocation(address:String, closure:(location:CLLocation, error:NSError?) -> ()){
+    class func addressToLocation(address:String, closure:(location:CLLocation, error:NSError?) -> ()) {
         var latitude:Double  = 0
         var longitude:Double = 0
         
@@ -41,10 +41,14 @@ class GeoLocation: NSObject {
                         let lngArray = locDict.valueForKey("lng") as! NSArray
                         longitude = lngArray.lastObject as! Double
                         let loc = CLLocation(latitude: latitude, longitude: longitude)
+                        println(response)
                         closure(location: loc, error: error)
+                    
                     }
                 }
             }
         }
     }
+    
+
 }
