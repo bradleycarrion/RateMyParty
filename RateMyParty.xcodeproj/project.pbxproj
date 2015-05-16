@@ -18,7 +18,8 @@
 		23D71DC21AF5E98A00B58BB9 /* UserDatabase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 23D71DC11AF5E98A00B58BB9 /* UserDatabase.swift */; };
 		23D71DC51AF5EF9400B58BB9 /* CloudKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 23D71DC41AF5EF9400B58BB9 /* CloudKit.framework */; };
 		23D71DC71AF61E1E00B58BB9 /* UserItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 23D71DC61AF61E1E00B58BB9 /* UserItem.swift */; };
-		23D71DCB1AF6E3E000B58BB9 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 23D71DCA1AF6E3E000B58BB9 /* Main.storyboard */; };
+		BB31BAA61B0028CD0010EA97 /* HouseTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB31BAA51B0028CD0010EA97 /* HouseTableViewController.swift */; };
+		BB31BAA81B005F4C0010EA97 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = BB31BAA71B005F4C0010EA97 /* Main.storyboard */; };
 		BBE939E61AF7585A00050D6A /* AddHouseDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = BBE939E51AF7585A00050D6A /* AddHouseDelegate.swift */; };
 		BBE939E81AF7594300050D6A /* AddHouseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BBE939E71AF7594300050D6A /* AddHouseViewController.swift */; };
 		BBE939EA1AF853A200050D6A /* TopCloud.swift in Sources */ = {isa = PBXBuildFile; fileRef = BBE939E91AF853A200050D6A /* TopCloud.swift */; };
@@ -53,12 +54,13 @@
 		23D71DC31AF5EF8F00B58BB9 /* RateMyParty.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.xml; path = RateMyParty.entitlements; sourceTree = "<group>"; };
 		23D71DC41AF5EF9400B58BB9 /* CloudKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CloudKit.framework; path = System/Library/Frameworks/CloudKit.framework; sourceTree = SDKROOT; };
 		23D71DC61AF61E1E00B58BB9 /* UserItem.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UserItem.swift; sourceTree = "<group>"; };
-		23D71DCA1AF6E3E000B58BB9 /* Main.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Main.storyboard; sourceTree = "<group>"; };
+		BB31BAA51B0028CD0010EA97 /* HouseTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HouseTableViewController.swift; sourceTree = "<group>"; };
+		BB31BAA71B005F4C0010EA97 /* Main.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Main.storyboard; sourceTree = "<group>"; };
 		BBE939E51AF7585A00050D6A /* AddHouseDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AddHouseDelegate.swift; sourceTree = "<group>"; };
 		BBE939E71AF7594300050D6A /* AddHouseViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AddHouseViewController.swift; sourceTree = "<group>"; };
 		BBE939E91AF853A200050D6A /* TopCloud.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TopCloud.swift; sourceTree = "<group>"; };
 		BBE939EB1AF8754300050D6A /* PinDatabase.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PinDatabase.swift; sourceTree = "<group>"; };
-		BBE939ED1AF89F9F00050D6A /* HouseItem.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HouseItem.swift; sourceTree = "<group>"; };
+		BBE939ED1AF89F9F00050D6A /* HouseItem.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = HouseItem.swift; path = ../HouseItem.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -83,7 +85,6 @@
 		23D71D881AF569E400B58BB9 = {
 			isa = PBXGroup;
 			children = (
-				BBE939ED1AF89F9F00050D6A /* HouseItem.swift */,
 				23D71DC41AF5EF9400B58BB9 /* CloudKit.framework */,
 				23D71D931AF569E400B58BB9 /* RateMyParty */,
 				23D71DA91AF569E500B58BB9 /* RateMyPartyTests */,
@@ -106,15 +107,17 @@
 				23D71DC31AF5EF8F00B58BB9 /* RateMyParty.entitlements */,
 				23D71DB81AF56E2100B58BB9 /* images */,
 				23D71D961AF569E400B58BB9 /* AppDelegate.swift */,
+				BBE939ED1AF89F9F00050D6A /* HouseItem.swift */,
 				23D71DC11AF5E98A00B58BB9 /* UserDatabase.swift */,
 				BBE939EB1AF8754300050D6A /* PinDatabase.swift */,
 				BBE939E91AF853A200050D6A /* TopCloud.swift */,
 				23D71DC61AF61E1E00B58BB9 /* UserItem.swift */,
 				23D71DB91AF582A400B58BB9 /* SignUpViewController.swift */,
+				BB31BAA71B005F4C0010EA97 /* Main.storyboard */,
 				23D71DBF1AF5DB8300B58BB9 /* MapViewController.swift */,
 				23D71D981AF569E400B58BB9 /* ViewController.swift */,
 				23D71D9F1AF569E500B58BB9 /* LaunchScreen.xib */,
-				23D71DCA1AF6E3E000B58BB9 /* Main.storyboard */,
+				BB31BAA51B0028CD0010EA97 /* HouseTableViewController.swift */,
 				BBE939E51AF7585A00050D6A /* AddHouseDelegate.swift */,
 				BBE939E71AF7594300050D6A /* AddHouseViewController.swift */,
 				23D71D941AF569E400B58BB9 /* Supporting Files */,
@@ -245,7 +248,7 @@
 				23D71DB71AF56E1800B58BB9 /* party.jpg in Resources */,
 				23D71DA11AF569E500B58BB9 /* LaunchScreen.xib in Resources */,
 				23D71DBE1AF5952300B58BB9 /* freshman.jpg in Resources */,
-				23D71DCB1AF6E3E000B58BB9 /* Main.storyboard in Resources */,
+				BB31BAA81B005F4C0010EA97 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -263,6 +266,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				BB31BAA61B0028CD0010EA97 /* HouseTableViewController.swift in Sources */,
 				BBE939EE1AF89F9F00050D6A /* HouseItem.swift in Sources */,
 				BBE939EC1AF8754300050D6A /* PinDatabase.swift in Sources */,
 				BBE939E61AF7585A00050D6A /* AddHouseDelegate.swift in Sources */,

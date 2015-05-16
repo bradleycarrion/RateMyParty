@@ -98,7 +98,51 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="x5A-6p-PRh" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="12.5" y="24.5"/>
+            <point key="canvasLocation" x="-113.5" y="-79.5"/>
+        </scene>
+        <!--House Table View Controller-->
+        <scene sceneID="Iqr-4u-bNg">
+            <objects>
+                <viewController id="7Tp-y1-jBx" customClass="HouseTableViewController" customModule="RateMyParty" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="8hU-AL-cEL"/>
+                        <viewControllerLayoutGuide type="bottom" id="HtG-8E-ZmM"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="E27-x1-reW">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" translatesAutoresizingMaskIntoConstraints="NO" id="hRA-pZ-LIC">
+                                <rect key="frame" x="0.0" y="79" width="375" height="544"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                            </tableView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Houses" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="UnR-og-kmP">
+                                <rect key="frame" x="158" y="36" width="59" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <toolbar opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Oo7-Cb-Pb3">
+                                <rect key="frame" x="0.0" y="623" width="375" height="44"/>
+                                <items>
+                                    <barButtonItem title="Map" id="PqH-Va-W1Z">
+                                        <connections>
+                                            <action selector="mapPressed" destination="7Tp-y1-jBx" id="O2V-aN-hhk"/>
+                                        </connections>
+                                    </barButtonItem>
+                                </items>
+                            </toolbar>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
+                    <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina47"/>
+                    <connections>
+                        <outlet property="tableView" destination="hRA-pZ-LIC" id="421-Ec-soe"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="sxJ-9T-OoX" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="343.5" y="505.5"/>
         </scene>
         <!--Map View Controller-->
         <scene sceneID="mLd-WJ-YwA">
@@ -112,8 +156,8 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <mapView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" mapType="standard" translatesAutoresizingMaskIntoConstraints="NO" id="6pf-ry-ZNF">
-                                <rect key="frame" x="0.0" y="66" width="375" height="601"/>
+                            <mapView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" misplaced="YES" mapType="standard" translatesAutoresizingMaskIntoConstraints="NO" id="6pf-ry-ZNF">
+                                <rect key="frame" x="0.0" y="59" width="375" height="566"/>
                             </mapView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Rhr-EY-HVQ">
                                 <rect key="frame" x="310" y="28" width="49" height="30"/>
@@ -134,9 +178,19 @@
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                                 <connections>
-                                    <segue destination="sX8-KJ-CgY" kind="custom" identifier="AddHouseSegue" id="3IR-st-pij"/>
+                                    <segue destination="sX8-KJ-CgY" kind="custom" identifier="addpin" id="3IR-st-pij"/>
                                 </connections>
                             </button>
+                            <toolbar opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="9Qf-05-5ry">
+                                <rect key="frame" x="0.0" y="623" width="375" height="44"/>
+                                <items>
+                                    <barButtonItem title="List" id="HnZ-l2-0jb">
+                                        <connections>
+                                            <segue destination="7Tp-y1-jBx" kind="custom" identifier="maptolist" id="wim-NJ-hik"/>
+                                        </connections>
+                                    </barButtonItem>
+                                </items>
+                            </toolbar>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
@@ -161,7 +215,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="paE-Uv-rHd" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="600.5" y="413.5"/>
+            <point key="canvasLocation" x="755.5" y="172.5"/>
         </scene>
         <!--Add House View Controller-->
         <scene sceneID="g07-RZ-FKR">
@@ -218,7 +272,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="MwN-4M-lyd" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1104" y="383"/>
+            <point key="canvasLocation" x="1268" y="141"/>
         </scene>
         <!--Sign Up View Controller-->
         <scene sceneID="edp-sn-UPr">
@@ -252,7 +306,6 @@
                                         </state>
                                         <connections>
                                             <action selector="signupButtonPressed:" destination="3uZ-SC-7Qx" eventType="touchUpInside" id="vBQ-EI-BOc"/>
-                                            <segue destination="vXZ-lx-hvc" kind="custom" id="RGD-ic-Ffu"/>
                                         </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Uar-Z9-qj3">
@@ -315,7 +368,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Yy8-DW-TWG" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="695" y="-355"/>
+            <point key="canvasLocation" x="383" y="-449"/>
         </scene>
     </scenes>
     <resources>

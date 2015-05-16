@@ -23,9 +23,11 @@ class ViewController: UIViewController, UITextFieldDelegate {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        passwordInput!.secureTextEntry = true
+        passwordInput?.secureTextEntry = true
         passwordInput?.delegate = self
+        passwordInput?.returnKeyType = UIReturnKeyType.Done
         emailAddressInput?.delegate = self
+        emailAddressInput?.returnKeyType = UIReturnKeyType.Next
         if CLLocationManager.authorizationStatus() == .NotDetermined {
             manager.requestWhenInUseAuthorization()
         }
@@ -54,8 +56,17 @@ class ViewController: UIViewController, UITextFieldDelegate {
                     }
                 }
                 else {
-                    println("User not found")
+                   
+                    let alert = UIAlertController(title: "Error", message: "Invalid username or password", preferredStyle: UIAlertControllerStyle.Alert)
+                    let action = UIAlertAction(title: "Ok", style: UIAlertActionStyle.Cancel, handler: {(action) in
+                        alert.dismissViewControllerAnimated(true, completion: nil)
+                    })
+                    alert.addAction(action)
+                    self.presentViewController(alert, animated: true, completion: nil)
+                    self.spin?.stopAnimating()
+                    
                 }
+                
                 
             })
             
@@ -72,7 +83,15 @@ class ViewController: UIViewController, UITextFieldDelegate {
       *  TextField Delegate functions
       */
     func textFieldShouldReturn(textField: UITextField) -> Bool {
-        return textField.resignFirstResponder()
+        if (textField == emailAddressInput!) {
+            emailAddressInput?.resignFirstResponder()
+            passwordInput?.becomeFirstResponder()
+        }
+        else if (textField == passwordInput) {
+            passwordInput?.resignFirstResponder()
+            loginButtonPressed(UIButton())
+        }
+        return true
     }
     
 

@@ -15,8 +15,8 @@ import CoreLocation
 class MapViewController: UIViewController, CLLocationManagerDelegate, AddHouseDelegate{
     @IBOutlet var mapView:MKMapView?
     let manager = CLLocationManager()
-    var pins: [HouseItem]? = nil
-
+    var pins = [HouseItem]()
+  
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -42,10 +42,23 @@ class MapViewController: UIViewController, CLLocationManagerDelegate, AddHouseDe
     
     
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
-        println("SEGUE")
-        let addVc = segue.destinationViewController as! AddHouseViewController
-        addVc.delegate = self
+        // gets the incoming view controller and sets the delegate to self
+        if (segue.identifier == "addpin") {
+            let addVc = segue.destinationViewController as! AddHouseViewController
+            addVc.delegate = self
+        }
+        else if (segue.identifier == "maptolist") {
+            println("list view controller")
+            let listVc = segue.destinationViewController as! HouseTableViewController
+            listVc.pins = self.pins
+        }
     }
+    
+    
+    /**
+      * add house delegate method 
+      * used to add pins to the map
+      */
     
     func addPin(adress: String, nickName: String) {
         println("pin at \(adress)")
@@ -58,11 +71,15 @@ class MapViewController: UIViewController, CLLocationManagerDelegate, AddHouseDe
         pinDb.addPinToDatabase(manager.location, address: adress, nickname: nickName) {}
     }
     
-    func getLocalPins() {
+    
+    /** 
+      * gets all pins within a certain radius and displays them to the map
+      */
+    private func getLocalPins() {
         let pinDb = PinDatabase()
-        pinDb.fetchPins(manager.location, radiusInMeters: 3000) { (results) in
-            if (results != nil) {
-                for r in results! {
+        pinDb.fetchPins(manager.location, radiusInMeters: 10000) { (results) in
+            if let finds = results {
+                for r in finds {
                     let adr = r.objectForKey("address") as! String
                     let nickname = r.objectForKey("nickname") as! String
                     let loc = r.objectForKey("location") as! CLLocation
@@ -71,7 +88,10 @@ class MapViewController: UIViewController, CLLocationManagerDelegate, AddHouseDe
                     pin.title = nickname
                     pin.subtitle = adr
                     self.mapView?.addAnnotation(pin)
+                    let houseItem = HouseItem(loc: loc, address: adr, nickname: nickname)
+                    self.pins.append(houseItem)
                 }
+                
                 
             }
         }

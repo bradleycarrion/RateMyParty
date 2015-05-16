@@ -13,7 +13,10 @@ import CloudKit
 class PinDatabase: NSObject {
     
     override init() {}
-    
+
+    /**
+      * takes a location and an adress and it adds it to the database
+      */
     func addPinToDatabase(location: CLLocation, address: String, nickname: String, closure: () -> ()) {
         let pinRecord = CKRecord(recordType: "House")
         pinRecord.setObject(location, forKey:"location")
@@ -24,7 +27,10 @@ class PinDatabase: NSObject {
     }
     
     
-    //closure should take an array of houses
+    /**
+      * Retreives the pins within the pin radius
+      * returns pins as an array[AnyObject] in closure
+      */
     func fetchPins(centerLocation:CLLocation, radiusInMeters:CLLocationDistance, closure: (results:[AnyObject]?) -> ()) {
         let radiusInKm = radiusInMeters/1000
         let predicate = NSPredicate(format: "distanceToLocation:fromLocation:(%K,%@) < %f","location",centerLocation,radiusInKm)

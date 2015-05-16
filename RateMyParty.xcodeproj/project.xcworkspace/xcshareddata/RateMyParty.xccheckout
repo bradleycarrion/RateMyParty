@@ -7,14 +7,14 @@
 	<key>IDESourceControlProjectIdentifier</key>
 	<string>8714529D-959F-4742-9AEF-7E29A0A52234</string>
 	<key>IDESourceControlProjectName</key>
-	<string>RateMyParty</string>
+	<string>project</string>
 	<key>IDESourceControlProjectOriginsDictionary</key>
 	<dict>
 		<key>974C51591E23BAF1D882EB809C15D1BB2427263E</key>
 		<string>https://github.com/bradleycarrion/RateMyParty.git</string>
 	</dict>
 	<key>IDESourceControlProjectPath</key>
-	<string>RateMyParty.xcodeproj</string>
+	<string>RateMyParty.xcodeproj/project.xcworkspace</string>
 	<key>IDESourceControlProjectRelativeInstallPathDictionary</key>
 	<dict>
 		<key>974C51591E23BAF1D882EB809C15D1BB2427263E</key>
