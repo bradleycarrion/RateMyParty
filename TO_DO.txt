@@ -12,6 +12,6 @@ BRADLEY:
 
 BERT:
 -Implement Street view <Get Image>
-	   -install Google SDK
+	   -install Google SDK ::: ->> DONE
 -Add reviews to cloud if street view is completed
 -Formalize coding documentation and convention

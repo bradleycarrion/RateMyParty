@@ -50,5 +50,9 @@ class GeoLocation: NSObject {
         }
     }
     
+    class func streetViewImage(location: CLLocation, closure: (image:UIImage, error:NSError?) -> ()) {
+        
+    }
+    
 
 }

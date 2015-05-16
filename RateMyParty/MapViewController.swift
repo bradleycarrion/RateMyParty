@@ -13,32 +13,40 @@ import CoreLocation
 
 
 class MapViewController: UIViewController, CLLocationManagerDelegate, AddHouseDelegate, MKMapViewDelegate {
+    // Outlet to the main MapView
     @IBOutlet var mapView:MKMapView?
+    // handles the user's location
     let manager = CLLocationManager()
+    // holds all of the pins
     var pins = [HouseItem]()
-<<<<<<< HEAD
-=======
-    
-    // creates a white background to better see the time and power
+    // creates a white background to better see the time, battery, and service
     let timePowerBar = UIView()
->>>>>>> origin/master
+    
+    var delegate: MapViewDelegate?
   
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
+        manager.requestAlwaysAuthorization()
         mapView?.delegate = self
+        mapView?.showsUserLocation = true
         
+        /*
+        * This is a UIView that is meant to better display the user's
+        * service, battery percentage, and the time
+        */
         timePowerBar.frame = CGRectMake(0, 0, self.view.frame.width, 20)
         timePowerBar.backgroundColor = UIColor.whiteColor()
         self.view.addSubview(timePowerBar)
         
         
-        UITabBar.appearance().barTintColor = UIColor.blackColor()
-        self.view.backgroundColor = UIColor.blackColor()
-        var span =   MKCoordinateSpan(latitudeDelta:  0.04, longitudeDelta: 0.04)
-        var region = MKCoordinateRegion(center:  manager.location.coordinate, span: span)
+        UITabBar.appearance().barTintColor = UIColor.blackColor() // TabBar Color : black
+        self.view.backgroundColor = UIColor.blackColor() // Background Color : black
+        
+        var span =   MKCoordinateSpan(latitudeDelta:  0.04, longitudeDelta: 0.04) // Initial view span
+        var region = MKCoordinateRegion(center:  manager.location.coordinate, span: span) // Initial region
         mapView!.setRegion(region, animated: false)
+        
         dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0), {
             self.getLocalPins()
         })
@@ -59,29 +67,16 @@ class MapViewController: UIViewController, CLLocationManagerDelegate, AddHouseDe
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
         // gets the incoming view controller and sets the delegate to self
         if (segue.identifier == "addpin") {
+            // case: when the addHouse button is pressed
             let addVc = segue.destinationViewController as! AddHouseViewController
             addVc.delegate = self
-<<<<<<< HEAD
-        }
-=======
         } else if (segue.identifier == "discussionSegue") {
+            // case: when the info button is pressed on any annotation
             let addVc = segue.destinationViewController as! DiscussionViewController
         } else {
+            // case: ... ?
             let addVc = segue.destinationViewController as! ViewController
         }
-            
-        /**
-         * Bert -> to list segue (implement later)
->>>>>>> origin/master
-        else if (segue.identifier == "maptolist") {
-            println("list view controller")
-            let listVc = segue.destinationViewController as! HouseTableViewController
-            listVc.pins = self.pins
-        }
-<<<<<<< HEAD
-=======
-        */
->>>>>>> origin/master
     }
     
     
@@ -114,11 +109,7 @@ class MapViewController: UIViewController, CLLocationManagerDelegate, AddHouseDe
       */
     private func getLocalPins() {
         let pinDb = PinDatabase()
-<<<<<<< HEAD
-        pinDb.fetchPins(manager.location, radiusInMeters: 10000) { (results) in
-=======
-        pinDb.fetchPins(manager.location, radiusInMeters: 100000000) { (results) in
->>>>>>> origin/master
+        pinDb.fetchPins(manager.location, radiusInMeters: 150000000) { (results) in
             if let finds = results {
                 for r in finds {
                     let adr = r.objectForKey("address") as! String
@@ -127,30 +118,36 @@ class MapViewController: UIViewController, CLLocationManagerDelegate, AddHouseDe
                     let pin = MKPointAnnotation()
                     pin.coordinate = loc.coordinate
                     pin.title = nickname
-                    pin.subtitle = adr
+                    var distance = Int(loc.distanceFromLocation(self.manager.location) * 0.000621371)
+                    pin.subtitle = String(stringInterpolationSegment: distance) + " miles"
+                    //pin.subtitle = adr
                     self.mapView?.addAnnotation(pin)
                     let houseItem = HouseItem(loc: loc, address: adr, nickname: nickname)
                     self.pins.append(houseItem)
                 }
-                
-                
             }
         }
     }
     
-    // When user taps on the disclosure button you can perform a segue to navigate to another view controller
+    /* 
+    * When user taps on the disclosure button
+    * you can perform a segue to navigate to the
+    * discussion view controller
+    */
     func mapView(mapView: MKMapView!, annotationView view: MKAnnotationView!, calloutAccessoryControlTapped control: UIControl!) {
         if control == view.rightCalloutAccessoryView{
-            println(view.annotation.title) // annotation's title
-            println(view.annotation.subtitle) // annotation's subttitle
+            println(view.annotation.title) // title
+            println(view.annotation.subtitle) // subtitle
             
-            //Perform a segue here to navigate to another viewcontroller
-            // On tapping the disclosure button you will get here
+            // Segue to the discussion page when the button is pressed
             performSegueWithIdentifier("discussionSegue", sender: nil)
         }
     }
     
-    // Here we add disclosure button inside annotation window
+    /*
+    * Adding the disclosure button to the
+    * mapView annotations
+    */
     func mapView(mapView: MKMapView!, viewForAnnotation annotation: MKAnnotation!) -> MKAnnotationView! {
         if annotation is MKUserLocation {
             return nil
@@ -160,15 +157,17 @@ class MapViewController: UIViewController, CLLocationManagerDelegate, AddHouseDe
         var pinView = mapView.dequeueReusableAnnotationViewWithIdentifier(reuseId) as? MKPinAnnotationView
         
         if pinView == nil {
-            //println("Pinview was nil")
             pinView = MKPinAnnotationView(annotation: annotation, reuseIdentifier: reuseId)
             pinView!.canShowCallout = true
             pinView!.animatesDrop = true
+            // changing the color of the pins
+            pinView?.pinColor = MKPinAnnotationColor.Green
         }
         
-        var button = UIButton.buttonWithType(UIButtonType.DetailDisclosure) as! UIButton // button with info sign in it
-        
+        // creates the information button within the annotation
+        var button = UIButton.buttonWithType(UIButtonType.ContactAdd) as! UIButton
         pinView?.rightCalloutAccessoryView = button
+        pinView?.leftCalloutAccessoryView = UIImageView(image: UIImage(named: "house.jpg"))
         
         return pinView
     }
