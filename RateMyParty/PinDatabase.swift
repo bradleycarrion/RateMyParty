@@ -38,5 +38,7 @@ class PinDatabase: NSObject {
         TopCloud.getQueryResults(query, closure: closure)
     }
     
+    
+
    
 }

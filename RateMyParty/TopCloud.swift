@@ -85,7 +85,6 @@ class TopCloud: NSObject {
             }
             else {
                 if (results.count > 0) {
-                    println("Results > 0")
                     dispatch_async(dispatch_get_main_queue()){ closure(qResults: results)}
                 }
             }

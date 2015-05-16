@@ -151,6 +151,7 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "RateMyParty/MapViewController.swift"
+<<<<<<< HEAD
             timestampString = "453017540.985699"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
@@ -158,6 +159,15 @@
             endingLineNumber = "74"
             landmarkName = "MapViewController"
             landmarkType = "3">
+=======
+            timestampString = "453156078.590593"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "73"
+            endingLineNumber = "73"
+            landmarkName = "prepareForSegue(_:sender:)"
+            landmarkType = "5">
+>>>>>>> origin/master
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy
@@ -166,6 +176,7 @@
             shouldBeEnabled = "No"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
+<<<<<<< HEAD
             filePath = "RateMyParty/MapViewController.swift"
             timestampString = "453017540.985699"
             startingColumnNumber = "9223372036854775807"
@@ -173,6 +184,63 @@
             startingLineNumber = "80"
             endingLineNumber = "80"
             landmarkName = "getLocalPins()"
+=======
+            filePath = "RateMyParty/HouseTableViewController.swift"
+            timestampString = "453001165.852611"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "30"
+            endingLineNumber = "30"
+            landmarkName = "tableView(_:cellForRowAtIndexPath:)"
+            landmarkType = "5">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "RateMyParty/SignUpViewController.swift"
+            timestampString = "453016273.416774"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "50"
+            endingLineNumber = "50"
+            landmarkName = "signupButtonPressed(_:)"
+            landmarkType = "5">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "RateMyParty/SignUpViewController.swift"
+            timestampString = "453016273.416774"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "56"
+            endingLineNumber = "56"
+            landmarkName = "signupButtonPressed(_:)"
+            landmarkType = "5">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "RateMyParty/SignUpViewController.swift"
+            timestampString = "453019021.348832"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "102"
+            endingLineNumber = "102"
+            landmarkName = "signupButtonPressed(_:)"
+>>>>>>> origin/master
             landmarkType = "5">
          </BreakpointContent>
       </BreakpointProxy>

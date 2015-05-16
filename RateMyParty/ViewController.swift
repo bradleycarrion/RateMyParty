@@ -40,6 +40,10 @@ class ViewController: UIViewController, UITextFieldDelegate {
         // Dispose of any resources that can be recreated.
     }
     
+    
+    /**
+        ONE CHANGE TO MAKE: change param to an enum value so it can account for lack of network
+      */
     @IBAction func loginButtonPressed(sender: UIButton) {
         if (emailAddressInput!.text == "" && passwordInput?.text == "") {
             return
@@ -49,7 +53,6 @@ class ViewController: UIViewController, UITextFieldDelegate {
             userDatabase.validateUserExists(emailAddressInput!.text, password: passwordInput!.text, closure: {(success: Bool) -> () in
             
                 if (success) {
-                    println("It worked")
                     dispatch_async(dispatch_get_main_queue()) {
                         self.performSegueWithIdentifier("loginSegue", sender: self)
                         self.spin?.stopAnimating()
