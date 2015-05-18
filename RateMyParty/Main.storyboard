@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="7531" systemVersion="14A314h" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" initialViewController="vXZ-lx-hvc">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="7531" systemVersion="14A329f" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" initialViewController="vXZ-lx-hvc">
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="7520"/>
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
@@ -112,19 +112,10 @@
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <mapView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" misplaced="YES" mapType="standard" translatesAutoresizingMaskIntoConstraints="NO" id="6pf-ry-ZNF">
+                            <mapView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" mapType="standard" translatesAutoresizingMaskIntoConstraints="NO" id="6pf-ry-ZNF">
                                 <rect key="frame" x="0.0" y="81" width="375" height="552"/>
                             </mapView>
-                            <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Rhr-EY-HVQ">
-                                <rect key="frame" x="310" y="43" width="49" height="30"/>
-                                <state key="normal" title="Logout">
-                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
-                                </state>
-                                <connections>
-                                    <segue destination="vXZ-lx-hvc" kind="modal" identifier="logoutSegue" id="FwH-7J-6Iy"/>
-                                </connections>
-                            </button>
-                            <tabBar contentMode="scaleToFill" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="b08-jt-WUZ">
+                            <tabBar contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="b08-jt-WUZ">
                                 <rect key="frame" x="0.0" y="618" width="375" height="49"/>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                 <items>
@@ -133,18 +124,26 @@
                                 </items>
                             </tabBar>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="E5Y-Z3-5LV">
-                                <rect key="frame" x="71" y="20" width="232" height="45"/>
+                                <rect key="frame" x="44" y="20" width="232" height="45"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="232" id="aAL-PV-xQ5"/>
                                     <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="208" id="hig-4b-YP7"/>
                                 </constraints>
                                 <fontDescription key="fontDescription" type="system" pointSize="21"/>
                                 <state key="normal" title="Register a House">
-                                    <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
-                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                    <color key="titleColor" red="0.40000000600000002" green="0.80000001190000003" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                 </state>
                                 <connections>
                                     <segue destination="sX8-KJ-CgY" kind="custom" identifier="addpin" id="3IR-st-pij"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Rhr-EY-HVQ">
+                                <rect key="frame" x="255" y="43" width="49" height="30"/>
+                                <state key="normal" title="Logout">
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <segue destination="vXZ-lx-hvc" kind="modal" identifier="logoutSegue" id="FwH-7J-6Iy"/>
                                 </connections>
                             </button>
                         </subviews>
@@ -152,19 +151,19 @@
                         <constraints>
                             <constraint firstItem="b08-jt-WUZ" firstAttribute="leading" secondItem="6pf-ry-ZNF" secondAttribute="leading" id="2O4-lb-zMX"/>
                             <constraint firstItem="b08-jt-WUZ" firstAttribute="trailing" secondItem="6pf-ry-ZNF" secondAttribute="trailing" id="7SP-EB-Qnr"/>
-                            <constraint firstAttribute="trailing" secondItem="6pf-ry-ZNF" secondAttribute="trailing" id="8FV-KX-wun"/>
+                            <constraint firstAttribute="trailing" secondItem="6pf-ry-ZNF" secondAttribute="trailing" constant="-55" id="8FV-KX-wun"/>
                             <constraint firstItem="6pf-ry-ZNF" firstAttribute="top" secondItem="UMr-2U-OJA" secondAttribute="top" constant="81" id="9DX-nc-a2n"/>
-                            <constraint firstItem="Ela-1d-Miv" firstAttribute="top" secondItem="6pf-ry-ZNF" secondAttribute="bottom" constant="-15" id="Gnk-W8-Ub1"/>
-                            <constraint firstAttribute="trailing" secondItem="6pf-ry-ZNF" secondAttribute="trailing" id="Jsf-4U-41U"/>
+                            <constraint firstItem="Ela-1d-Miv" firstAttribute="top" secondItem="6pf-ry-ZNF" secondAttribute="bottom" constant="-65" id="Gnk-W8-Ub1"/>
+                            <constraint firstAttribute="trailing" secondItem="6pf-ry-ZNF" secondAttribute="trailing" constant="-55" id="Jsf-4U-41U"/>
                             <constraint firstItem="6pf-ry-ZNF" firstAttribute="leading" secondItem="UMr-2U-OJA" secondAttribute="leading" id="KFJ-dO-WZ7"/>
-                            <constraint firstAttribute="bottom" secondItem="6pf-ry-ZNF" secondAttribute="bottom" constant="34" id="Kef-KQ-pIw"/>
+                            <constraint firstAttribute="bottom" secondItem="6pf-ry-ZNF" secondAttribute="bottom" constant="-65" id="Kef-KQ-pIw"/>
                             <constraint firstItem="Rhr-EY-HVQ" firstAttribute="top" secondItem="JZb-dO-Kms" secondAttribute="bottom" constant="23" id="NlO-sp-Xfh"/>
-                            <constraint firstItem="E5Y-Z3-5LV" firstAttribute="leading" secondItem="UMr-2U-OJA" secondAttribute="leading" constant="71" id="OdL-hO-RCS"/>
+                            <constraint firstItem="E5Y-Z3-5LV" firstAttribute="leading" secondItem="UMr-2U-OJA" secondAttribute="leading" constant="44" id="OdL-hO-RCS"/>
                             <constraint firstAttribute="trailing" secondItem="Rhr-EY-HVQ" secondAttribute="trailing" constant="16" id="VlH-av-Yu0"/>
-                            <constraint firstAttribute="trailing" secondItem="E5Y-Z3-5LV" secondAttribute="trailing" constant="72" id="aOn-Tm-qi4"/>
-                            <constraint firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="E5Y-Z3-5LV" secondAttribute="trailing" constant="72" id="cg0-Nx-zYc"/>
-                            <constraint firstItem="E5Y-Z3-5LV" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="UMr-2U-OJA" secondAttribute="leading" constant="71" id="cwS-Fe-bvK"/>
-                            <constraint firstAttribute="trailing" secondItem="6pf-ry-ZNF" secondAttribute="trailing" id="erh-a7-Wam"/>
+                            <constraint firstAttribute="trailing" secondItem="E5Y-Z3-5LV" secondAttribute="trailing" constant="44" id="aOn-Tm-qi4"/>
+                            <constraint firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="E5Y-Z3-5LV" secondAttribute="trailing" constant="44" id="cg0-Nx-zYc"/>
+                            <constraint firstItem="E5Y-Z3-5LV" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="UMr-2U-OJA" secondAttribute="leading" constant="44" id="cwS-Fe-bvK"/>
+                            <constraint firstAttribute="trailing" secondItem="6pf-ry-ZNF" secondAttribute="trailing" constant="-55" id="erh-a7-Wam"/>
                             <constraint firstItem="b08-jt-WUZ" firstAttribute="top" secondItem="6pf-ry-ZNF" secondAttribute="bottom" constant="-15" id="lBG-KM-tsG"/>
                             <constraint firstItem="E5Y-Z3-5LV" firstAttribute="top" secondItem="JZb-dO-Kms" secondAttribute="bottom" id="pwh-Dv-yWy"/>
                             <constraint firstItem="6pf-ry-ZNF" firstAttribute="top" secondItem="E5Y-Z3-5LV" secondAttribute="bottom" constant="16" id="zUk-Id-rcL"/>
@@ -179,7 +178,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="paE-Uv-rHd" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1342.5" y="-510.5"/>
+            <point key="canvasLocation" x="1255" y="-510"/>
         </scene>
         <!--Add House View Controller-->
         <scene sceneID="g07-RZ-FKR">

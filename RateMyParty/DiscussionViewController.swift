@@ -11,7 +11,9 @@ import UIKit
 import MapKit
 
 class DiscussionViewController: UIViewController, UITextViewDelegate, UITextFieldDelegate, UITableViewDataSource, UITableViewDelegate {
+    
     @IBOutlet var toggleViews: UISegmentedControl?
+    
     var talkAboutItView = UIView()
     var discussionTableView = UITableView()
     var reviewIt = UIView()
@@ -21,7 +23,14 @@ class DiscussionViewController: UIViewController, UITextViewDelegate, UITextFiel
     var reviewPercentage = Int(0)
     var talkAboutItTextInput = UITextField()
     var yourReviewLabel = UILabel()
-    var discussionMessagesArray = [String]()
+    var discussionMessagesArray = [ReviewItem]()
+    
+    var theAddress:String?
+    
+    var redValue   = 255.0
+    var greenValue = 0.0
+    var blueValue  = 0.0
+    
     
     
     @IBAction func indexChanged(sender:UISegmentedControl)
@@ -42,6 +51,9 @@ class DiscussionViewController: UIViewController, UITextViewDelegate, UITextFiel
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        if let address = theAddress {
+            println(address)
+        }
         /* DISCUSSION PAGE */
         /* the discussion page attributes */
         
@@ -57,9 +69,20 @@ class DiscussionViewController: UIViewController, UITextViewDelegate, UITextFiel
         discussionTableView.backgroundColor = UIColor.blackColor()
         talkAboutItView.addSubview(discussionTableView)
         
-        // check if the table view has any submission's yet, if not, display "Be the first to Discuss this party"
-        if (discussionMessagesArray.count == 0) {
-            submitToDiscussionBoard("Be the first to discuss.")
+        let revDB = ReviewDatabase()
+        dispatch_async(dispatch_get_main_queue()) {
+            revDB.getHouseReviews(self.theAddress!) { (results) in
+                if let reviews = results {
+                    for review in reviews {
+                        let message = review.objectForKey("message") as! String
+                        let date    = review.objectForKey("date") as! NSDate
+                        let address = review.objectForKey("address") as! String
+                        let aReview = ReviewItem(date: date, address: address, message: message)
+                        self.discussionMessagesArray.append(aReview)
+                    }
+                    self.discussionTableView.reloadData()
+                }
+            }
         }
         
         // the talkAboutItTextBox setup
@@ -84,7 +107,7 @@ class DiscussionViewController: UIViewController, UITextViewDelegate, UITextFiel
         // setting up the percentage label
         reviewPercentageLabel.frame = CGRectMake(0, 60, reviewIt.frame.size.width, 200)
         reviewPercentageLabel.text = "0%"
-        reviewPercentageLabel.textColor = UIColor.whiteColor()
+        reviewPercentageLabel.textColor = UIColor(red: CGFloat(redValue/255), green: CGFloat(greenValue/255), blue: CGFloat(0.0), alpha: CGFloat(1.0))
         reviewPercentageLabel.font = UIFont(name: "AppleSDGothicNeo-Thin", size: 110)
         reviewIt.addSubview(reviewPercentageLabel)
         
@@ -126,8 +149,26 @@ class DiscussionViewController: UIViewController, UITextViewDelegate, UITextFiel
     
     // Changing the percentage value from slider
     func sliderValueChanged(sender: UISlider) {
+       
         reviewPercentage = Int(sender.value)
         
+        if (reviewPercentage < 50) {
+            var slope = (255.0 / 50.0) * Double(reviewPercentage)
+            greenValue = slope
+            blueValue  = slope
+        }
+        else if (reviewPercentage == 50) {
+            redValue   = 255.0
+            greenValue = 255.0
+            blueValue  = 255.0
+        }
+        else {
+            var slope = (255.0 / -50.0) *  Double(reviewPercentage)
+            blueValue = slope + 510
+            redValue  = slope + 510
+        }
+        
+        reviewPercentageLabel.textColor = UIColor(red: CGFloat(redValue/255), green: CGFloat(greenValue/255), blue: CGFloat(blueValue/255), alpha: CGFloat(1.0))
         reviewPercentageLabel.text = "\(reviewPercentage)%"
     }
     
@@ -143,18 +184,29 @@ class DiscussionViewController: UIViewController, UITextViewDelegate, UITextFiel
             discussionMessagesArray.removeAll(keepCapacity: true)
         }
         
-        // Send to the cloud -> bert
-        discussionMessagesArray.append(message)
+        let revDB = ReviewDatabase()
+        let date = NSDate()
+        revDB.pushReview(message, address: theAddress!, date: date) {}
+        
+        let review = ReviewItem(date: date, address: theAddress!, message: message)
+        discussionMessagesArray.append(review)
         discussionTableView.reloadData()
     }
     
     func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        if(discussionMessagesArray.count == 0) {
+            return 1
+        }
         return self.discussionMessagesArray.count
     }
     
     func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
         var cell:UITableViewCell = discussionTableView.dequeueReusableCellWithIdentifier("cell") as! UITableViewCell
-        cell.textLabel?.text = self.discussionMessagesArray[indexPath.row]
+        if (discussionMessagesArray.count == 0) {
+            cell.textLabel?.text = "Be the first to leave a review"
+            return cell
+        }
+        cell.textLabel?.text = self.discussionMessagesArray[indexPath.row].message
         return cell
     }
     

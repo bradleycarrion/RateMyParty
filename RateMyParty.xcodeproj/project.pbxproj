@@ -7,23 +7,24 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		23D71D971AF569E400B58BB9 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 23D71D961AF569E400B58BB9 /* AppDelegate.swift */; };
 		23D71D991AF569E400B58BB9 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 23D71D981AF569E400B58BB9 /* ViewController.swift */; };
 		23D71DA11AF569E500B58BB9 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 23D71D9F1AF569E500B58BB9 /* LaunchScreen.xib */; };
 		23D71DAD1AF569E500B58BB9 /* RateMyPartyTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 23D71DAC1AF569E500B58BB9 /* RateMyPartyTests.swift */; };
 		23D71DB71AF56E1800B58BB9 /* party.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 23D71DB61AF56E1800B58BB9 /* party.jpg */; };
 		23D71DBA1AF582A400B58BB9 /* SignUpViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 23D71DB91AF582A400B58BB9 /* SignUpViewController.swift */; };
 		23D71DBE1AF5952300B58BB9 /* freshman.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 23D71DBD1AF5952300B58BB9 /* freshman.jpg */; };
-		23D71DC21AF5E98A00B58BB9 /* UserDatabase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 23D71DC11AF5E98A00B58BB9 /* UserDatabase.swift */; };
 		23D71DC51AF5EF9400B58BB9 /* CloudKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 23D71DC41AF5EF9400B58BB9 /* CloudKit.framework */; };
-		23D71DC71AF61E1E00B58BB9 /* UserItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 23D71DC61AF61E1E00B58BB9 /* UserItem.swift */; };
 		23ED966B1B0139B000E2013C /* DiscussionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 23ED966A1B0139B000E2013C /* DiscussionViewController.swift */; };
+		BB26392D1B07C5EA00D4EDCE /* PinDatabase.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB26392A1B07C5EA00D4EDCE /* PinDatabase.swift */; };
+		BB26392E1B07C5EA00D4EDCE /* TopCloud.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB26392B1B07C5EA00D4EDCE /* TopCloud.swift */; };
+		BB26392F1B07C5EA00D4EDCE /* UserDatabase.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB26392C1B07C5EA00D4EDCE /* UserDatabase.swift */; };
+		BB2639321B07C64000D4EDCE /* HouseItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB2639301B07C64000D4EDCE /* HouseItem.swift */; };
+		BB2639331B07C64000D4EDCE /* UserItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB2639311B07C64000D4EDCE /* UserItem.swift */; };
+		BB2639371B07C68900D4EDCE /* AddHouseDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB2639341B07C68900D4EDCE /* AddHouseDelegate.swift */; };
+		BB2639381B07C68900D4EDCE /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB2639351B07C68900D4EDCE /* AppDelegate.swift */; };
+		BB26393B1B07C6A000D4EDCE /* HouseCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB26393A1B07C6A000D4EDCE /* HouseCell.swift */; };
 		BB31BAA81B005F4C0010EA97 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = BB31BAA71B005F4C0010EA97 /* Main.storyboard */; };
-		BBE939E61AF7585A00050D6A /* AddHouseDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = BBE939E51AF7585A00050D6A /* AddHouseDelegate.swift */; };
 		BBE939E81AF7594300050D6A /* AddHouseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BBE939E71AF7594300050D6A /* AddHouseViewController.swift */; };
-		BBE939EA1AF853A200050D6A /* TopCloud.swift in Sources */ = {isa = PBXBuildFile; fileRef = BBE939E91AF853A200050D6A /* TopCloud.swift */; };
-		BBE939EC1AF8754300050D6A /* PinDatabase.swift in Sources */ = {isa = PBXBuildFile; fileRef = BBE939EB1AF8754300050D6A /* PinDatabase.swift */; };
-		BBE939EE1AF89F9F00050D6A /* HouseItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = BBE939ED1AF89F9F00050D6A /* HouseItem.swift */; };
 		BBE9D6A81B01E41600A97AA2 /* GeoLocation.swift in Sources */ = {isa = PBXBuildFile; fileRef = BBE9D6A71B01E41600A97AA2 /* GeoLocation.swift */; };
 		BBE9D6AC1B044CD900A97AA2 /* MainHouseListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BBE9D6AB1B044CD900A97AA2 /* MainHouseListView.swift */; };
 		BBE9D6B01B0456B300A97AA2 /* AVFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BBE9D6AF1B0456B300A97AA2 /* AVFoundation.framework */; };
@@ -41,9 +42,9 @@
 		BBE9D6CE1B045AB100A97AA2 /* GoogleMaps.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BBE9D6CD1B045AB100A97AA2 /* GoogleMaps.framework */; };
 		BBE9D6D61B045CD000A97AA2 /* GoogleMaps.bundle in Resources */ = {isa = PBXBuildFile; fileRef = BBE9D6D51B045CD000A97AA2 /* GoogleMaps.bundle */; };
 		BBE9D6DA1B07002100A97AA2 /* MapViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BBE9D6D91B07002100A97AA2 /* MapViewController.swift */; };
-		BBE9D6DC1B07004C00A97AA2 /* MapViewDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = BBE9D6DB1B07004C00A97AA2 /* MapViewDelegate.swift */; };
-		BBE9D6DE1B07006800A97AA2 /* HouseCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = BBE9D6DD1B07006800A97AA2 /* HouseCell.swift */; };
 		BBE9D6E01B07014200A97AA2 /* house.jpg in Resources */ = {isa = PBXBuildFile; fileRef = BBE9D6DF1B07014200A97AA2 /* house.jpg */; };
+		BBF907BA1B0846BB0046E033 /* ReviewDatabase.swift in Sources */ = {isa = PBXBuildFile; fileRef = BBF907B91B0846BB0046E033 /* ReviewDatabase.swift */; };
+		BBF907BC1B084C040046E033 /* ReviewItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = BBF907BB1B084C040046E033 /* ReviewItem.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -59,7 +60,6 @@
 /* Begin PBXFileReference section */
 		23D71D911AF569E400B58BB9 /* RateMyParty.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = RateMyParty.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		23D71D951AF569E400B58BB9 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		23D71D961AF569E400B58BB9 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		23D71D981AF569E400B58BB9 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		23D71DA01AF569E500B58BB9 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/LaunchScreen.xib; sourceTree = "<group>"; };
 		23D71DA61AF569E500B58BB9 /* RateMyPartyTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = RateMyPartyTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -68,17 +68,19 @@
 		23D71DB61AF56E1800B58BB9 /* party.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = party.jpg; sourceTree = "<group>"; };
 		23D71DB91AF582A400B58BB9 /* SignUpViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SignUpViewController.swift; sourceTree = "<group>"; };
 		23D71DBD1AF5952300B58BB9 /* freshman.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = freshman.jpg; sourceTree = "<group>"; };
-		23D71DC11AF5E98A00B58BB9 /* UserDatabase.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = UserDatabase.swift; path = ../UserDatabase.swift; sourceTree = "<group>"; };
 		23D71DC31AF5EF8F00B58BB9 /* RateMyParty.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.xml; name = RateMyParty.entitlements; path = RateMyParty/RateMyParty.entitlements; sourceTree = "<group>"; };
 		23D71DC41AF5EF9400B58BB9 /* CloudKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CloudKit.framework; path = System/Library/Frameworks/CloudKit.framework; sourceTree = SDKROOT; };
-		23D71DC61AF61E1E00B58BB9 /* UserItem.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UserItem.swift; sourceTree = "<group>"; };
 		23ED966A1B0139B000E2013C /* DiscussionViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DiscussionViewController.swift; sourceTree = "<group>"; };
+		BB26392A1B07C5EA00D4EDCE /* PinDatabase.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = PinDatabase.swift; path = Cloud/PinDatabase.swift; sourceTree = "<group>"; };
+		BB26392B1B07C5EA00D4EDCE /* TopCloud.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = TopCloud.swift; path = Cloud/TopCloud.swift; sourceTree = "<group>"; };
+		BB26392C1B07C5EA00D4EDCE /* UserDatabase.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = UserDatabase.swift; path = Cloud/UserDatabase.swift; sourceTree = "<group>"; };
+		BB2639301B07C64000D4EDCE /* HouseItem.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = HouseItem.swift; path = Model/HouseItem.swift; sourceTree = "<group>"; };
+		BB2639311B07C64000D4EDCE /* UserItem.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = UserItem.swift; path = Model/UserItem.swift; sourceTree = "<group>"; };
+		BB2639341B07C68900D4EDCE /* AddHouseDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = AddHouseDelegate.swift; path = Delegate_Protocols/AddHouseDelegate.swift; sourceTree = "<group>"; };
+		BB2639351B07C68900D4EDCE /* AppDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = AppDelegate.swift; path = Delegate_Protocols/AppDelegate.swift; sourceTree = "<group>"; };
+		BB26393A1B07C6A000D4EDCE /* HouseCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = HouseCell.swift; path = UI/HouseCell.swift; sourceTree = "<group>"; };
 		BB31BAA71B005F4C0010EA97 /* Main.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Main.storyboard; sourceTree = "<group>"; };
-		BBE939E51AF7585A00050D6A /* AddHouseDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AddHouseDelegate.swift; sourceTree = "<group>"; };
 		BBE939E71AF7594300050D6A /* AddHouseViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AddHouseViewController.swift; sourceTree = "<group>"; };
-		BBE939E91AF853A200050D6A /* TopCloud.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TopCloud.swift; sourceTree = "<group>"; };
-		BBE939EB1AF8754300050D6A /* PinDatabase.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PinDatabase.swift; sourceTree = "<group>"; };
-		BBE939ED1AF89F9F00050D6A /* HouseItem.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = HouseItem.swift; path = ../HouseItem.swift; sourceTree = "<group>"; };
 		BBE9D6A71B01E41600A97AA2 /* GeoLocation.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GeoLocation.swift; sourceTree = "<group>"; };
 		BBE9D6AB1B044CD900A97AA2 /* MainHouseListView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MainHouseListView.swift; sourceTree = "<group>"; };
 		BBE9D6AF1B0456B300A97AA2 /* AVFoundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AVFoundation.framework; path = System/Library/Frameworks/AVFoundation.framework; sourceTree = SDKROOT; };
@@ -97,9 +99,9 @@
 		BBE9D6CD1B045AB100A97AA2 /* GoogleMaps.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = GoogleMaps.framework; path = RateMyParty/GoogleMaps.framework; sourceTree = "<group>"; };
 		BBE9D6D51B045CD000A97AA2 /* GoogleMaps.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; name = GoogleMaps.bundle; path = RateMyParty/GoogleMaps.framework/Versions/A/Resources/GoogleMaps.bundle; sourceTree = "<group>"; };
 		BBE9D6D91B07002100A97AA2 /* MapViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MapViewController.swift; sourceTree = "<group>"; };
-		BBE9D6DB1B07004C00A97AA2 /* MapViewDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MapViewDelegate.swift; sourceTree = "<group>"; };
-		BBE9D6DD1B07006800A97AA2 /* HouseCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HouseCell.swift; sourceTree = "<group>"; };
 		BBE9D6DF1B07014200A97AA2 /* house.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = house.jpg; sourceTree = "<group>"; };
+		BBF907B91B0846BB0046E033 /* ReviewDatabase.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ReviewDatabase.swift; path = Cloud/ReviewDatabase.swift; sourceTree = "<group>"; };
+		BBF907BB1B084C040046E033 /* ReviewItem.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ReviewItem.swift; path = Model/ReviewItem.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -248,9 +250,10 @@
 		BBE9D6E21B07B1D600A97AA2 /* Cloud */ = {
 			isa = PBXGroup;
 			children = (
-				23D71DC11AF5E98A00B58BB9 /* UserDatabase.swift */,
-				BBE939EB1AF8754300050D6A /* PinDatabase.swift */,
-				BBE939E91AF853A200050D6A /* TopCloud.swift */,
+				BB26392A1B07C5EA00D4EDCE /* PinDatabase.swift */,
+				BB26392B1B07C5EA00D4EDCE /* TopCloud.swift */,
+				BB26392C1B07C5EA00D4EDCE /* UserDatabase.swift */,
+				BBF907B91B0846BB0046E033 /* ReviewDatabase.swift */,
 			);
 			name = Cloud;
 			sourceTree = "<group>";
@@ -272,9 +275,8 @@
 		BBE9D6E41B07B21C00A97AA2 /* Delegate Protocols */ = {
 			isa = PBXGroup;
 			children = (
-				BBE9D6DB1B07004C00A97AA2 /* MapViewDelegate.swift */,
-				23D71D961AF569E400B58BB9 /* AppDelegate.swift */,
-				BBE939E51AF7585A00050D6A /* AddHouseDelegate.swift */,
+				BB2639341B07C68900D4EDCE /* AddHouseDelegate.swift */,
+				BB2639351B07C68900D4EDCE /* AppDelegate.swift */,
 			);
 			name = "Delegate Protocols";
 			sourceTree = "<group>";
@@ -282,8 +284,9 @@
 		BBE9D6E51B07B23800A97AA2 /* Model */ = {
 			isa = PBXGroup;
 			children = (
-				BBE939ED1AF89F9F00050D6A /* HouseItem.swift */,
-				23D71DC61AF61E1E00B58BB9 /* UserItem.swift */,
+				BB2639301B07C64000D4EDCE /* HouseItem.swift */,
+				BB2639311B07C64000D4EDCE /* UserItem.swift */,
+				BBF907BB1B084C040046E033 /* ReviewItem.swift */,
 			);
 			name = Model;
 			sourceTree = "<group>";
@@ -291,7 +294,7 @@
 		BBE9D6E61B07B25700A97AA2 /* UI */ = {
 			isa = PBXGroup;
 			children = (
-				BBE9D6DD1B07006800A97AA2 /* HouseCell.swift */,
+				BB26393A1B07C6A000D4EDCE /* HouseCell.swift */,
 			);
 			name = UI;
 			sourceTree = "<group>";
@@ -406,21 +409,22 @@
 			buildActionMask = 2147483647;
 			files = (
 				BBE9D6AC1B044CD900A97AA2 /* MainHouseListView.swift in Sources */,
-				BBE939EE1AF89F9F00050D6A /* HouseItem.swift in Sources */,
+				BB26392F1B07C5EA00D4EDCE /* UserDatabase.swift in Sources */,
 				23ED966B1B0139B000E2013C /* DiscussionViewController.swift in Sources */,
-				BBE939EC1AF8754300050D6A /* PinDatabase.swift in Sources */,
+				BB2639381B07C68900D4EDCE /* AppDelegate.swift in Sources */,
 				BBE9D6A81B01E41600A97AA2 /* GeoLocation.swift in Sources */,
-				BBE939E61AF7585A00050D6A /* AddHouseDelegate.swift in Sources */,
-				BBE9D6DC1B07004C00A97AA2 /* MapViewDelegate.swift in Sources */,
-				23D71DC21AF5E98A00B58BB9 /* UserDatabase.swift in Sources */,
-				BBE939EA1AF853A200050D6A /* TopCloud.swift in Sources */,
+				BBF907BC1B084C040046E033 /* ReviewItem.swift in Sources */,
 				23D71DBA1AF582A400B58BB9 /* SignUpViewController.swift in Sources */,
+				BBF907BA1B0846BB0046E033 /* ReviewDatabase.swift in Sources */,
+				BB2639331B07C64000D4EDCE /* UserItem.swift in Sources */,
 				BBE939E81AF7594300050D6A /* AddHouseViewController.swift in Sources */,
+				BB2639371B07C68900D4EDCE /* AddHouseDelegate.swift in Sources */,
+				BB2639321B07C64000D4EDCE /* HouseItem.swift in Sources */,
 				23D71D991AF569E400B58BB9 /* ViewController.swift in Sources */,
-				23D71D971AF569E400B58BB9 /* AppDelegate.swift in Sources */,
+				BB26392E1B07C5EA00D4EDCE /* TopCloud.swift in Sources */,
 				BBE9D6DA1B07002100A97AA2 /* MapViewController.swift in Sources */,
-				BBE9D6DE1B07006800A97AA2 /* HouseCell.swift in Sources */,
-				23D71DC71AF61E1E00B58BB9 /* UserItem.swift in Sources */,
+				BB26392D1B07C5EA00D4EDCE /* PinDatabase.swift in Sources */,
+				BB26393B1B07C6A000D4EDCE /* HouseCell.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

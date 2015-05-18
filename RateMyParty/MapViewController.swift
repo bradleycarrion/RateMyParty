@@ -22,14 +22,13 @@ class MapViewController: UIViewController, CLLocationManagerDelegate, AddHouseDe
     // creates a white background to better see the time, battery, and service
     let timePowerBar = UIView()
     
-    var delegate: MapViewDelegate?
   
     
     override func viewDidLoad() {
         super.viewDidLoad()
         manager.requestAlwaysAuthorization()
         mapView?.delegate = self
-        mapView?.showsUserLocation = true
+        mapView?.showsUserLocation = false
         
         /*
         * This is a UIView that is meant to better display the user's
@@ -73,6 +72,8 @@ class MapViewController: UIViewController, CLLocationManagerDelegate, AddHouseDe
         } else if (segue.identifier == "discussionSegue") {
             // case: when the info button is pressed on any annotation
             let addVc = segue.destinationViewController as! DiscussionViewController
+            let title = sender as! String
+            addVc.theAddress = title
         } else {
             // case: ... ?
             let addVc = segue.destinationViewController as! ViewController
@@ -118,9 +119,10 @@ class MapViewController: UIViewController, CLLocationManagerDelegate, AddHouseDe
                     let pin = MKPointAnnotation()
                     pin.coordinate = loc.coordinate
                     pin.title = nickname
+                    /**
                     var distance = Int(loc.distanceFromLocation(self.manager.location) * 0.000621371)
-                    pin.subtitle = String(stringInterpolationSegment: distance) + " miles"
-                    //pin.subtitle = adr
+                    pin.subtitle = String(stringInterpolationSegment: distance) + " miles"**/
+                    pin.subtitle = adr
                     self.mapView?.addAnnotation(pin)
                     let houseItem = HouseItem(loc: loc, address: adr, nickname: nickname)
                     self.pins.append(houseItem)
@@ -140,7 +142,7 @@ class MapViewController: UIViewController, CLLocationManagerDelegate, AddHouseDe
             println(view.annotation.subtitle) // subtitle
             
             // Segue to the discussion page when the button is pressed
-            performSegueWithIdentifier("discussionSegue", sender: nil)
+            performSegueWithIdentifier("discussionSegue", sender: view.annotation.subtitle)
         }
     }
     
@@ -171,5 +173,6 @@ class MapViewController: UIViewController, CLLocationManagerDelegate, AddHouseDe
         
         return pinView
     }
+    
 
 }
